@@ -22,7 +22,7 @@ urlpatterns = [
 
     ##URL for recipes
     path('createRecipe/', views.create_recipes,name="create"),
-    path('updateRecipe/', views.update_recipes,name="update"),
-    path('deleteRecipe/', views.delete_recipes,name="delete"),
-    path('allRecipe/', views.read_recipes,name="read"),
+    path('updateRecipe/<int:param_id_recipes>', views.update_recipes,name="update"),
+    path('deleteRecipe/<int:param_id_recipes>', views.delete_recipes,name="delete"),
+    path('allRecipes/', views.read_recipes,name="read"),
 ]
