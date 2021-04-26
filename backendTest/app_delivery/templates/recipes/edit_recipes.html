@@ -1,0 +1,29 @@
+{% extends 'basetemplate.html' %}
+
+{% block data_body %}
+<h4>Ingresa el menu</h4>
+<form method="POST">
+    {%csrf_token %}
+    <div class="col-md-12">
+        <div class="col-md-4 mb-3">
+            <label for="validationServer01">Ingresa el menu</label>
+            <input type="text" class="form-control is-valid" id="validationServer01" required name='menu' value="{{recipe.description}}">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationServer02">Fecha que se publicará la receta</label>
+            <input type="text" class="form-control is-valid" id="validationServer02" placeholder="09/02/22" required name="date" value="{{recipe.date}}">
+        </div>
+    <button class="btn btn-primary" type="submit" >Update</button>
+</form">
+<a class="btn btn-primary" href="{% url 'read' %}">atrás</a>
+{% if messages %}
+    {% for message in messages  %}
+        {% if message.tags == 'success' %}
+            <div class="alert alert-success col-md-4">{{message}}</div>
+        {% elif message.tags == 'error'%}
+            <div class="alert alert-danger col-md-4">{{message}}</div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endblock data_body %}

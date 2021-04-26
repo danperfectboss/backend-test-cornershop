@@ -1,0 +1,31 @@
+{% extends 'basetemplate.html' %}
+
+{% block data_body %}
+ <div class="container">
+     <div class="row">
+        {% for recipe in recipes %}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Recipe for the day: {{recipe.date}}</h5>
+                    <p class="card-text">{{recipe.description}}</p>
+                    <a href="/updateRecipe/{{recipe.id_recipe}}" class="card-link">Edit</a>
+                    <a href="/deleteRecipe/{{recipe.id_recipe}}" class="card-link">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% if messages %}
+    {% for message in messages  %}
+        {% if message.tags == 'success' %}
+            <div class="alert alert-success col-md-4">{{message}}</div>
+        {% elif message.tags == 'error'%}
+            <div class="alert alert-danger col-md-4">{{message}}</div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endblock data_body %}
