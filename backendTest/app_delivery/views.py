@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import *
 from django.contrib import messages
 from .complements.dates import Transformdata
+from .complements.bot import Bot_Slack
 
 # Create your views here.
 
@@ -15,7 +16,7 @@ def create_recipes(request):
             recipes = Recipe(description=menu,date=dateObj)
             recipes.save()
             messages.success(request,"Recipe added successfully")
-
+            Bot_Slack("This is a test").send_message()
             
         except:
             return HttpResponseBadRequest('We can´t get the recipes')
