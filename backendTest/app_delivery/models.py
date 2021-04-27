@@ -6,6 +6,7 @@ class Recipe(models.Model):
     id_recipe = models.AutoField(primary_key=True)
     description = models.CharField(max_length=1000)
     date = models.DateField(auto_now=False, auto_now_add=False)
+    public = models.BooleanField(default=False)
 
 class Employees(models.Model):
     id_employee = models.BigAutoField(primary_key=True)
