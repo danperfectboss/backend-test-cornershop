@@ -19,10 +19,15 @@ from app_delivery import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index),
+
 
     ##URL for recipes
     path('createRecipe/', views.create_recipes,name="create"),
     path('updateRecipe/<int:param_id_recipes>', views.update_recipes,name="update"),
     path('deleteRecipe/<int:param_id_recipes>', views.delete_recipes,name="delete"),
     path('allRecipes/', views.read_recipes,name="read"),
+    
+    path('enable/<int:param_id_recipes>', views.enable_recipes,name="enable"),
+
 ]
