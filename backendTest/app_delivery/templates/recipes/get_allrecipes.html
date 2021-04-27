@@ -1,7 +1,17 @@
 {% extends 'basetemplate.html' %}
 
 {% block data_body %}
+<h1>Recetas Guardadas</h1>
+
+
+
+
+
  <div class="container">
+    <div class="row">
+        <div class="col-md-6"><a class="btn btn-primary" href="{% url 'create' %}">Agregar receta</a></div>
+        <div class="col-md-6"><a class="btn btn-primary" href="">Ver receta personalizadas</a></div>
+    </div>
      <div class="row">
         {% for recipe in recipes %}
         <div class="col-md-4">
@@ -9,8 +19,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Recipe for the day: {{recipe.date}}</h5>
                     <p class="card-text">{{recipe.description}}</p>
-                    <a href="/updateRecipe/{{recipe.id_recipe}}" class="card-link">Edit</a>
-                    <a href="/deleteRecipe/{{recipe.id_recipe}}" class="card-link">Delete</a>
+                    <a href="/updateRecipe/{{recipe.id_recipe}}" class="card-link">Editar</a>
+                    <a href="/deleteRecipe/{{recipe.id_recipe}}" class="card-link">Borrar</a>
                 </div>
             </div>
         </div>

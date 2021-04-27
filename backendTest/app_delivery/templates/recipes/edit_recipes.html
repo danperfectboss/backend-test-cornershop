@@ -13,9 +13,9 @@
             <label for="validationServer02">Fecha que se publicará la receta</label>
             <input type="text" class="form-control is-valid" id="validationServer02" placeholder="09/02/22" required name="date" value="{{recipe.date}}">
         </div>
-    <button class="btn btn-primary" type="submit" >Update</button>
+    <button class="btn btn-success" type="submit" >Enviar</button>
 </form">
-<a class="btn btn-primary" href="{% url 'read' %}">atrás</a>
+<a class="btn btn-primary" href="{% url 'read' %}">Atrás</a>
 {% if messages %}
     {% for message in messages  %}
         {% if message.tags == 'success' %}

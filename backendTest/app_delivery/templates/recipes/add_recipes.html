@@ -7,6 +7,7 @@
 {% block data_body %}
 
 <h4>Ingresa el menu</h4>
+
 <form method="POST">
     {%csrf_token %}
     <div class="col-md-12">
@@ -18,8 +19,9 @@
             <label for="validationServer02">Fecha que se publicará la receta</label>
             <input type="text" class="form-control is-valid" id="validationServer02" placeholder="09/02/22" required name="date">
         </div>
-    <button class="btn btn-primary" type="submit">Submit form</button>
+    <button class="btn btn-success" type="submit">Agregar Receta</button>
 </form class=" form-group">
+<a class="btn btn-primary" href="{% url 'read' %}">Ver recetas</a>
 
 
 {% if messages %}
