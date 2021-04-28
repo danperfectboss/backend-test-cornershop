@@ -18,9 +18,9 @@ from celery import shared_task
 #             print("Message can't be send it")
 
 #se genera el canal con el cliente de slack aqui va el token
-CLIENT = slack.WebClient(token="xoxb-974816393074-1989003701255-nutyr97MIDQd76zd4VLV6FlB")
+CLIENT = slack.WebClient(token="token goes here")
 # canal en el cual va a ser deplegado el mensaje
-CHANNEL = "#backen-test-cornershop"
+CHANNEL = "#backend_test"
 
 
 #con celery se crea esta tarea compartida para enviarlo de manera asincrona
