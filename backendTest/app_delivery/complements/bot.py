@@ -17,13 +17,17 @@ from celery import shared_task
 #         except:
 #             print("Message can't be send it")
 
-CLIENT = slack.WebClient(token="")
-#CHANNEL = "#backen-test-cornershop"
-CHANNEL = "#test"
+#se genera el canal con el cliente de slack aqui va el token
+CLIENT = slack.WebClient(token="xoxb-974816393074-1989003701255-nutyr97MIDQd76zd4VLV6FlB")
+# canal en el cual va a ser deplegado el mensaje
+CHANNEL = "#backen-test-cornershop"
 
+
+#con celery se crea esta tarea compartida para enviarlo de manera asincrona
 @shared_task
 def send_message(text):
     try:
+        #envia el mensaje al canal asignado previamente
         CLIENT.chat_postMessage(channel=CHANNEL, text=text)
     except:
         print("Message can't be send it")
