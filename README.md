@@ -28,6 +28,9 @@ Y para mostrar unicamente el menu del día es:
 Este link es el que se mandará al canal de Slack
 
 Se uso una app de Heroku con Redis para hacer funcionar Celery
+Como base de datos se uso SQL lite que trae por defecto
+Slack para el envio de mensajes
+Celery para el envio de eventos asincronos
 
 Buena Suerte!
   
