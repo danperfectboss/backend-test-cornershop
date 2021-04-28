@@ -23,11 +23,17 @@ urlpatterns = [
 
 
     ##URL for recipes
-    path('createRecipe/', views.create_recipes,name="create"),
-    path('updateRecipe/<int:param_id_recipes>', views.update_recipes,name="update"),
-    path('deleteRecipe/<int:param_id_recipes>', views.delete_recipes,name="delete"),
-    path('allRecipes/', views.read_recipes,name="read"),
+    path('createRecipe/', views.create_menu,name="create"),
+    path('updateRecipe/<int:param_id_menu>', views.update_menu,name="update"),
+    path('deleteRecipe/<int:param_id_menu>', views.delete_menu,name="delete"),
+    path('allRecipes/', views.read_menu,name="read"),
     
-    path('enable/<int:param_id_recipes>', views.enable_recipes,name="enable"),
+    path('enable/<int:param_id_menu>', views.enable_menu,name="enable"),
+    path('menu/<int:param_id_menu>', views.menu,name="menu"),
+    path('customMenu/', views.read_custom_menu,name="custom"),
+    path('deleteCustomMenu/<int:param_id_menu>', views.delete_custom_menu,name="custom"),
+    # deleteCustomMenu
+
+
 
 ]
