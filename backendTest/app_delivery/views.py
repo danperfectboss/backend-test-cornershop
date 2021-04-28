@@ -108,7 +108,7 @@ def read_custom_menu(request):
     
     return render(request, "recipes/customsMenu.html", {'customMenu':customMenu,'employee':emploList,'menu':menuList,'noData':noData})
 
-Función que borra los menus customizados
+# Función que borra los menus customizados
 def delete_custom_menu(request, param_id_menu):
     try:
         custom= CustomRecipes.objects.get(id_customRecipe=param_id_menu)
@@ -184,4 +184,4 @@ def enable_menu(request,param_id_menu):
 
 #Metodo se encarga de redireccionar al menu si se visita la raiz de la pagina
 def index(request):
-    return HttpResponseRedirect("/menu/")
+    return HttpResponseRedirect("/menu/1")
