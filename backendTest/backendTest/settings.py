@@ -121,11 +121,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CRONJOBS = [
-    ('*/1 * * * *','app_delivery.complements.cronjobs.hi')
-]
 
 
+#Se crean las configuraciones del url para REDIS almacenado en una app de heroku
 CELERY_BROKER_URL = 'redis://:pb4244f6174dfe83ccb663819af80faef4bc84c10e6d6553033871b110b505dbe@ec2-52-208-34-227.eu-west-1.compute.amazonaws.com:10790'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
