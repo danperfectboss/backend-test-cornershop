@@ -1,0 +1,29 @@
+{% extends 'basetemplate.html' %}
+
+{% block data_body %}
+    {% if noData %}
+        <h3>No hay recetas customizadas</h3>
+    {% endif %}
+    <div class="container">
+        <div class="row">
+            {% for menus in customMenu %}
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Patillo customizado:</h5>
+                            <p class="card-text">{{menus.commentary}}</p>
+                            
+                            <a href="/deleteCustomMenu/{{menus.id_customRecipe}}" class="card-link">Borrar</a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+        <div class="row">
+            <a class="btn btn-primary" href="{% url 'read' %}">Ver recetas</a>
+        </div>
+        
+    </div>
+{% endblock data_body %}

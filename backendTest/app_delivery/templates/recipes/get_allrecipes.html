@@ -10,7 +10,7 @@
  <div class="container">
     <div class="row">
         <div class="col-md-6"><a class="btn btn-primary" href="{% url 'create' %}">Agregar receta</a></div>
-        <div class="col-md-6"><a class="btn btn-primary" href="">Ver receta personalizadas</a></div>
+        <div class="col-md-6"><a class="btn btn-primary" href="{% url 'custom' %}">Ver receta personalizadas</a></div>
     </div>
      <div class="row">
         {% for recipe in recipes %}
